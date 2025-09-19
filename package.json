@@ -1,0 +1,25 @@
+{
+  "name": "chakrabeats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "/usr/local/bin/tailwindcss -i ./src/input.css -o ./assets/tailwind.css --minify",
+    "build:js": "./node_modules/.bin/esbuild ./src/chakrabeats.jsx --bundle --format=iife --jsx=automatic --minify --outfile=./assets/chakrabeats.js",
+    "build": "npm run build:css && npm run build:js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "esbuild": "^0.25.9",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.13"
+  }
+}
