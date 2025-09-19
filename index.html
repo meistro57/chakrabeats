@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChakraBeats - Binaural Beat Generator | Quantum Minds United</title>
+    <meta name="description" content="Align your chakras with sacred frequencies. Generate binaural beats tuned to the seven chakras for meditation and energy healing.">
+    <meta name="keywords" content="chakras, binaural beats, meditation, frequencies, sound healing, brainwave entrainment">
+    
+    <!-- React and Babel -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: #000;
+            overflow-x: hidden;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Loading animation */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #0F0F23 0%, #1A1A2E 50%, #16213E 100%);
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Custom slider styling - mobile friendly */
+        .slider::-webkit-slider-thumb {
+            appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(168, 85, 247, 0.3);
+            touch-action: manipulation;
+        }
+
+        .slider::-moz-range-thumb {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 8px rgba(168, 85, 247, 0.3);
+            touch-action: manipulation;
+        }
+
+        /* Mobile touch optimization */
+        @media (max-width: 768px) {
+            .slider::-webkit-slider-thumb {
+                height: 28px;
+                width: 28px;
+            }
+            
+            .slider::-moz-range-thumb {
+                height: 28px;
+                width: 28px;
+            }
+            
+            input[type="range"] {
+                height: 40px;
+            }
+        }
+
+        /* Prevent zoom on input focus (iOS) */
+        input[type="number"] {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <div class="loading">
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <script type="text/babel" src="chakrabeats.jsx"></script>
+    
+    <script type="text/babel">
+        // The component will be loaded from chakrabeats.jsx
+        // This ensures it renders properly
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<BinauralChakraApp />);
+    </script>
+    
+    <!-- Optional: Analytics or other tracking -->
+    <!-- 
+    <script>
+        // Add your analytics code here if needed
+    </script>
+    -->
+</body>
+</html>
